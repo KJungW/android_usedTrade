@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/startFrag">
+
+    <fragment
+        android:id="@+id/startFrag"
+        android:name="com.kjw.usetrade.StartFrag"
+        android:label="StartFrag">
+        <action
+            android:id="@+id/action_startFrag_to_loginFrag"
+            app:destination="@id/loginFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFrag"
+        android:name="com.kjw.usetrade.LoginFrag"
+        android:label="LoginFrag" >
+        <action
+            android:id="@+id/action_loginFrag_to_signupFrag"
+            app:destination="@id/signupFrag" />
+        <action
+            android:id="@+id/action_loginFrag_to_productListFrag"
+            app:destination="@id/productListFrag"
+            app:popUpTo="@id/startFrag"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFrag"
+        android:name="com.kjw.usetrade.SignupFrag"
+        android:label="SignupFrag" >
+        <action
+            android:id="@+id/action_signupFrag_to_productListFrag"
+            app:destination="@id/productListFrag"
+            app:popUpTo="@id/startFrag"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/productListFrag"
+        android:name="com.kjw.usetrade.ProductListFrag"
+        android:label="productListFrag">
+        <action
+            android:id="@+id/action_productListFrag_to_productAddFrag"
+            app:destination="@id/productAddFrag" />
+        <action
+            android:id="@+id/action_productListFrag_to_productShowFrag"
+            app:destination="@id/productShowFrag" />
+        <action
+            android:id="@+id/action_productListFrag_to_productUpdateFrag"
+            app:destination="@id/productUpdateFrag" />
+        <action
+            android:id="@+id/action_productListFrag_to_messageListFrag"
+            app:destination="@id/messageListFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/productAddFrag"
+        android:name="com.kjw.usetrade.ProductAddFragment"
+        android:label="productAddFrag">
+        <action
+            android:id="@+id/action_productAddFrag_to_productListFrag"
+            app:destination="@id/productListFrag"
+            app:popUpTo="@id/productListFrag"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/productShowFrag"
+        android:name="com.kjw.usetrade.ProductShowFragment"
+        android:label="productShowFrag" >
+        <action
+            android:id="@+id/action_productShowFrag_to_productListFrag"
+            app:destination="@id/productListFrag"
+            app:popUpTo="@id/productListFrag"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_productShowFrag_to_sendMessageFrag"
+            app:destination="@id/sendMessageFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/productUpdateFrag"
+        android:name="com.kjw.usetrade.ProductUpdateFragment"
+        android:label="productUpdateFrag" >
+        <action
+            android:id="@+id/action_productUpdateFrag_to_productListFrag"
+            app:destination="@id/productListFrag"
+            app:popUpTo="@id/productListFrag"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendMessageFrag"
+        android:name="com.kjw.usetrade.SendMessageFragment"
+        android:label="sendMessageFrag" >
+        <action
+            android:id="@+id/action_sendMessageFrag_to_productShowFrag"
+            app:destination="@id/productShowFrag"
+            app:popUpTo="@id/productShowFrag"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/messageListFrag"
+        android:name="com.kjw.usetrade.MessageListFragment"
+        android:label="messageListFrag" >
+        <action
+            android:id="@+id/action_messageListFrag_to_productListFrag"
+            app:destination="@id/productListFrag"
+            app:popUpTo="@id/productListFrag"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_messageListFrag_to_showMessageFrag"
+            app:destination="@id/showMessageFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/showMessageFrag"
+        android:name="com.kjw.usetrade.ShowMessageFragment"
+        android:label="showMessageFrag" >
+        <action
+            android:id="@+id/action_showMessageFrag_to_messageListFrag"
+            app:destination="@id/messageListFrag" />
+        <action
+            android:id="@+id/action_showMessageFrag_to_sendMessageFrag"
+            app:destination="@id/sendMessageFrag"
+            app:popUpTo="@id/showMessageFrag"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
